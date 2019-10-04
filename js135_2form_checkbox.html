@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formulario y checkbox</title>
+	<style type="text/css">
+		.formulario {
+			width: 250px;
+			border: 1px solid blue;
+			background-color: lightgrey;
+			margin:auto;
+			padding: 10px;
+			box-shadow: 5px solid blue;
+		}
+		label {
+			width: 10px;
+			display: inline-block;
+			line-height: 15px;
+		}
+
+		input {
+			width: 100px;
+
+		}
+		.input {
+			/* display: flex; */
+			margin:auto;
+			width: 80px;
+
+		}
+		.bordes {
+				border-radius: 10px;
+				box-shadow: 4px 3px 6px black;
+			}
+	</style>
+	<script type="text/javascript">
+		
+		function enviaFormulario () {
+			var i;
+			var seleccionado=(document.formu.check);
+				for(i in seleccionado) {
+			 		if (seleccionado[i].checked) {
+			  			alert(seleccionado[i].value);
+			  			document.write(seleccionado[i].value);
+			  		}
+				}
+		}
+	</script>
+</head>
+
+<body>
+	<main>
+		<form class="formulario bordes" name="formu" method="get" action="#">
+			<label>1</label>
+			<input type="checkbox" name="check" value="Check1" checked>
+			<br>
+			<label>2</label>
+			<input type="checkbox" name="check" value="Check2">
+			<br>
+			<label>3</label>
+			<input type="checkbox" name="check" value="Check3">
+			<br>
+			<input type="button" name="envio" value="ENVIAR" onclick="enviaFormulario()">
+		</form>
+	</main>
+</body>
+</html>
